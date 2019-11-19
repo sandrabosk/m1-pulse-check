@@ -1,6 +1,6 @@
 ![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
 
-# JS | WebDev Assessment - Week 1 
+# JS | WebDev Pulse check - Module 1 
 
 _Disclosure_: The goal of this assessment is not to grade you since Ironhack is not a traditional school. The result of this assessment won't influence your future here at Ironhack in any matter. Our ultimate goal is to understand if there are still some pitfalls that need to be filled before we proceed with the rest of the materials. The concepts we covered so far represent the fundamentals of JavaScript programming language. We aim to proceed with a strong base, thus for it is of the most significance for us to know where you currently stand so we can focus on helping you with what the help is the most needed.
 <br>
