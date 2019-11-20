@@ -1,16 +1,25 @@
 // Write a function that returns the product of 2 numbers
 function product(x, y) {
+
+  return x * y 
   //
 }
 
 // Write a function that returns whether a given number is even
 function isEven(num) {
+
+  if(num % 2 === 0)
+  return true
+  else 
+  return false
   //
 }
 
 // Return the largest of 2 numbers
 function maxOfTwoNumbers(a, b) {
   //
+
+  
 }
 
 // Return the largest of 3 numbers
