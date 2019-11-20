@@ -67,19 +67,48 @@ function doesWordExist(wordsArr, word) {
 
 // Finding the first non-duplicate (non-repeating) word in an array
 // let arr = ['foo', 'bar', 'foo', 'baz', 'bar', 'fizz', 'foo'];
-function findUnique(wordsArr) {
-  //
+// function findUnique(wordsArr) {
+//   //
 
-  for (let i = 0; i < wordsArr.length; i++) {
-    if (
-      wordsArr.indexOf(wordsArr[i]) == i &&
-      wordsArr.indexOf(wordsArr[i], i + 1) == -1
-    ) {
-      return wordsArr[i];
-    }
+//   for (let i = 0; i < wordsArr.length; i++) {
+//     if (
+//       wordsArr.indexOf(wordsArr[i]) == i &&
+//       wordsArr.indexOf(wordsArr[i], i + 1) == -1
+//     ) {
+//       return wordsArr[i];
+//     }
+//   }
+//   return false;
+// }
+
+// // another way
+// 1.
+function findUnique(wordsArr) {
+  if (wordsArr.length) {
+    let uniques = wordsArr.filter(
+      (el, idx, arr) => arr.indexOf(el) === arr.lastIndexOf(el)
+    );
+    return uniques[0];
   }
   return false;
 }
+
+//2.
+// var arr = [-1, 2, 5, 6, 2, 9, -1, 6, 5, -1, 3];
+// var n = arr.length;
+// var result = [];
+// function nonrep() {
+//   for (var i = 0; i < n; i++) {
+//     for (var j=0 ; j < n; j++)
+//       if (i!=j && arr[i]==arr[j])
+//         break;
+//     if(j==n)
+//         result.push(arr[i]);
+//   }
+//   return result;
+// }
+// console.log(nonrep())
+
 // console.log(findUnique(arr));
 
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
@@ -89,22 +118,38 @@ function getFullName(personObj) {
 }
 
 // Return the largest number in a two dimensional array
-// var matrix = [
-//   [9, 1, 1331, 42],
-//   [3133, 13, 1],
-//   [931, 3131, 0],
-// ];
+var matrix = [
+  [9, 1, 1331, 42],
+  [3133, 13, 1],
+  [931, 3131, 0],
+];
+
 function maxTwoDimArray(matrix) {
   //
   let max = 0;
-  let maxArr = [];
+
   for (let i = 0; i < matrix.length; i++) {
-    for (let j = 0; j < matrix[i].length; j++) {
-      maxArr.push(matrix[i][j]);
+    let max1 = Math.max(...matrix[i]);
+    if (max1 > max) {
+      max = max1;
     }
   }
-  max = Math.max(...maxArr);
 
   return max;
 }
+console.log(maxTwoDimArray(matrix));
+
+// function maxTwoDimArray(matrix) {
+//   //
+//   let max = 0;
+//   let maxArr = [];
+//   for (let i = 0; i < matrix.length; i++) {
+//     for (let j = 0; j < matrix[i].length; j++) {
+//       maxArr.push(matrix[i][j]);
+//     }
+//   }
+//   max = Math.max(...maxArr);
+
+//   return max;
+// }
 // maxTwoDimArray(matrix);
