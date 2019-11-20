@@ -140,23 +140,27 @@ function findUnique(wordsArr) {
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
 function getFullName(personObj) {
 
-  // if(typeof(personObj) != "object")
-  // return false;
+  if(typeof(personObj) != "object")
+  return false;
 
 
-  // for (const property in personObj) 
+  let text = "";
+  let x;
+  for (x in personObj) {
+    text += [personObj[x]] + " ";
+  }
 
-  //   if(property != undefined)
-  //   let newObjet = Object.assign({}, )
-  //   return personObj[property]
-  
+  let result = text.split(" ", 2).join(" ")
+
+
+  return result
   
 
 }
 
 // Return the largest number in a two dimensional array
 function maxTwoDimArray(matrix) {
-  
+
   let largest = [0][0];
   
   for (let i = 0; i < matrix.length; i++) {
