@@ -6,7 +6,7 @@ function product(x, y) {
 // Write a function that returns whether a given number is even
 function isEven(num) {
   //
-  if (num / 2 == 9) return true;
+  if (num % 2 == 0) return true;
   else return false;
 }
 
@@ -64,7 +64,8 @@ function doesWordExist(wordsArr, word) {
 
 // Finding the first non-duplicate (non-repeating) word in an array
 function findUnique(wordsArr) {
-  //
+
+  return false;
 }
 
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
@@ -75,5 +76,11 @@ function getFullName(personObj) {
 
 // Return the largest number in a two dimensional array
 function maxTwoDimArray(matrix) {
-  //
+  let maxArr = 3133;
+
+  for (let oneArr of matrix) {
+    if (oneArr > maxArr) maxArr = oneArr;
+  }
+
+  return maxArr;
 }
