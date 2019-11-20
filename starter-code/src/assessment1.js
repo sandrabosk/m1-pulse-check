@@ -36,10 +36,10 @@ function longestString(strings) {
   let longestString = '';
   for (i = 0; i < strings.length; i++){
     if (strings[i].length > longestString.length) {
-      strings[i] = longestString;
+      longestString = strings[i];
     }
-    return longestString;
   } 
+  return longestString;
 };
 
 // Return whether a word is in an array
@@ -48,8 +48,14 @@ function doesWordExist(wordsArr, word) {
 }
 
 // Finding the first non-duplicate (non-repeating) word in an array
-function findUnique(wordsArr) {
-  // RETURN TO THIS ONE
+function findUnique(wordsArr) { // THIS IS MY BEST GUESS BUT DIDN'T WORK
+  let howOften = [];
+  wordsArr.split('').forEach(ch => {
+    if (!howOften[ch])
+    howOften[ch] = 1;
+    else
+    howOften[ch]++;
+  });
 }
 
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
