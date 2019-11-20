@@ -46,19 +46,45 @@ function maxOfArray(numbers) {
 }
 
 // Return the longest string in an array
+
+let someArr = ['abc', 'asasas', 'abas', 'bas', 'assa'];
 function longestString(strings) {
   //
   let arr = [...strings];
-  let longestWord;
-  for (let i = 0; i < arr.length; i++) {
-    longestWord = arr[0];
-    if (arr[i].length > longestWord.length) {
-      longestWord = arr[i];
-    }
+  let stringLength = [];
+  for (let i = 1; i < arr.length; i++) {
+    stringLength.push(arr[i].length);
   }
-  return longestWord;
+  let maxLength = Math.max(...stringLength);
+  for (let j = 0; j < arr.length; j++) {
+    if (arr[j].length === maxLength) return arr[j];
+  }
 }
+// function longestString(strings) {
+//   //
+//   let arr = [...strings];
+//   let longestString = [];
+//   for (let i = 1; i < arr.length; i++) {
+//     longestString = arr[0];
+//     if (arr[i].length > longestString.length) {
+//       longestString = arr[i];
+//     }
+//   }
+//   return longestString;
+// }
 
+// function longestString(strings) {
+//   //
+//   let arr = [...strings];
+//   let longestWord = 0;
+//   let word = Math.max(...arr);
+//   console.log('Output for: longestString -> word', word);
+//   if (word > longestWord) {
+//     longestWord = word;
+//   }
+//   return arr[longestWord];
+// }
+console.log(longestString(someArr));
 // Return whether a word is in an array
 function doesWordExist(wordsArr, word) {
   //
@@ -68,8 +94,8 @@ function doesWordExist(wordsArr, word) {
 // Finding the first non-duplicate (non-repeating) word in an array
 // let arr = ['foo', 'bar', 'foo', 'baz', 'bar', 'fizz', 'foo'];
 // function findUnique(wordsArr) {
-//   //
-
+//   //1-way.
+// //==================================================
 //   for (let i = 0; i < wordsArr.length; i++) {
 //     if (
 //       wordsArr.indexOf(wordsArr[i]) == i &&
@@ -82,7 +108,8 @@ function doesWordExist(wordsArr, word) {
 // }
 
 // // another way
-// 1.
+// 2-way.
+// //==================================================
 function findUnique(wordsArr) {
   if (wordsArr.length) {
     let uniques = wordsArr.filter(
@@ -93,7 +120,8 @@ function findUnique(wordsArr) {
   return false;
 }
 
-//2.
+//3-way.
+// //==================================================
 // var arr = [-1, 2, 5, 6, 2, 9, -1, 6, 5, -1, 3];
 // var n = arr.length;
 // var result = [];
@@ -118,11 +146,11 @@ function getFullName(personObj) {
 }
 
 // Return the largest number in a two dimensional array
-var matrix = [
-  [9, 1, 1331, 42],
-  [3133, 13, 1],
-  [931, 3131, 0],
-];
+// var matrix = [
+//   [9, 1, 1331, 42],
+//   [3133, 13, 1],
+//   [931, 3131, 0],
+// ];
 
 function maxTwoDimArray(matrix) {
   //
@@ -137,8 +165,10 @@ function maxTwoDimArray(matrix) {
 
   return max;
 }
-console.log(maxTwoDimArray(matrix));
+// console.log(maxTwoDimArray(matrix));
 
+// //another way ===>>>
+// //==================================================
 // function maxTwoDimArray(matrix) {
 //   //
 //   let max = 0;
@@ -153,3 +183,4 @@ console.log(maxTwoDimArray(matrix));
 //   return max;
 // }
 // maxTwoDimArray(matrix);
+// //==================================================
