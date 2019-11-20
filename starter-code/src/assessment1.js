@@ -47,35 +47,34 @@ function maxOfArray(numbers) {
 
 // Return the longest string in an array
 
-let someArr = ['abc', 'asasas', 'abas', 'bas', 'assa'];
-function longestString(strings) {
-  //
-  let arr = [...strings];
-  let stringLength = [];
-  for (let i = 1; i < arr.length; i++) {
-    stringLength.push(arr[i].length);
-  }
-  let maxLength = Math.max(...stringLength);
-  for (let j = 0; j < arr.length; j++) {
-    if (arr[j].length === maxLength) return arr[j];
-  }
-}
-
-// this one is passing the test but in reality it's not finding longest word.
-// need to find out why???
+let someArr = ['abc', 'as', 'ab', 'basa', 'as'];
 // function longestString(strings) {
 //   //
 //   let arr = [...strings];
-//   let longestString = [];
+//   let stringLength = [];
 //   for (let i = 1; i < arr.length; i++) {
-//     longestString = arr[0];
-//     if (arr[i].length > longestString.length) {
-//       longestString = arr[i];
-//     }
+//     stringLength.push(arr[i].length);
 //   }
-//   return longestString;
+//   let maxLength = Math.max(...stringLength);
+//   for (let j = 0; j < arr.length; j++) {
+//     if (arr[j].length === maxLength) return arr[j];
+//   }
 // }
 
+// another way
+function longestString(strings) {
+  //
+  let arr = [...strings];
+  let longestString = arr[0];
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i].length > longestString.length) {
+      longestString = arr[i];
+    }
+  }
+  return longestString;
+}
+// console.log(longestString(someArr));
 // Return whether a word is in an array
 function doesWordExist(wordsArr, word) {
   //
@@ -121,7 +120,7 @@ function findUnique(wordsArr) {
 // because fist and last index never gonna equal
 //unless it's one word or element. Very logic.
 
-console.log(findUnique(arr));
+// console.log(findUnique(arr));
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
 function getFullName(personObj) {
   //
