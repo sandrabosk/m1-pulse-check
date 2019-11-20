@@ -114,35 +114,64 @@ function doesWordExist(wordsArr, word) {
 // Finding the first non-duplicate (non-repeating) word in an array
 function findUnique(wordsArr) {
   //
-// let testArray = wordsArr;
-//   const result = wordsArr.map((Oneword) => {
+  if(wordsArr.length < 1 || wordsArr == undefined)
+  return false
+  
+    function howManyTimes (arr, word) {
+    let count = 0;
 
-//   for (i = 0 ; i < testArray.length; i++)
-//     if(Oneword === testArray[i]){
-//       return i
-//     }
+    for(let el of arr){
+      if(el === word) 
+      count ++
+    }
+  return count
 
-//   })
+  }
+    const result = wordsArr.map((Oneword) => {
+      return howManyTimes(wordsArr, Oneword)  
+    }).indexOf(1)
 
-//   console.log(result)
-let unique = [];
-for(let element of wordsArr){
-  if(element === word) return true
-}
-if(element != word){
+  let wordFinal = wordsArr[result];
 
-  unique.push(element)
-}
+  return wordFinal
 
-return unique
 }
 
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
 function getFullName(personObj) {
-  //
+
+  // if(typeof(personObj) != "object")
+  // return false;
+
+
+  // for (const property in personObj) 
+
+  //   if(property != undefined)
+  //   let newObjet = Object.assign({}, )
+  //   return personObj[property]
+  
+  
+
 }
 
 // Return the largest number in a two dimensional array
 function maxTwoDimArray(matrix) {
-  //
+  
+  let largest = [0][0];
+  
+  for (let i = 0; i < matrix.length; i++) {
+	
+		for (let j = 0; j < matrix[i].length; j++) {
+
+			if (matrix[i][j] > largest) {
+				largest = matrix[i][j];
+			}
+		}
+	}
+
+	return largest;
+
+
+
+
 }
