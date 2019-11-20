@@ -58,7 +58,8 @@ function longestString(strings) {
 
 // Return whether a word is in an array
 function doesWordExist(wordsArr, word) {
-  //
+  if (wordsArr.includes(word)) return true;
+  else return false
 }
 
 // Finding the first non-duplicate (non-repeating) word in an array
