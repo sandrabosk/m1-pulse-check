@@ -60,6 +60,9 @@ function longestString(strings) {
     if (arr[j].length === maxLength) return arr[j];
   }
 }
+
+// this one is passing the test but in reality it's not finding longest word.
+// need to find out why???
 // function longestString(strings) {
 //   //
 //   let arr = [...strings];
@@ -73,18 +76,6 @@ function longestString(strings) {
 //   return longestString;
 // }
 
-// function longestString(strings) {
-//   //
-//   let arr = [...strings];
-//   let longestWord = 0;
-//   let word = Math.max(...arr);
-//   console.log('Output for: longestString -> word', word);
-//   if (word > longestWord) {
-//     longestWord = word;
-//   }
-//   return arr[longestWord];
-// }
-console.log(longestString(someArr));
 // Return whether a word is in an array
 function doesWordExist(wordsArr, word) {
   //
@@ -92,10 +83,10 @@ function doesWordExist(wordsArr, word) {
 }
 
 // Finding the first non-duplicate (non-repeating) word in an array
-// let arr = ['foo', 'bar', 'foo', 'baz', 'bar', 'fizz', 'foo'];
-// function findUnique(wordsArr) {
+let arr = ['foo', 'bar', 'foo', 'baz', 'bar', 'asa', 'fizz', 'baz', 'foo'];
 //   //1-way.
 // //==================================================
+// function findUnique(wordsArr) {
 //   for (let i = 0; i < wordsArr.length; i++) {
 //     if (
 //       wordsArr.indexOf(wordsArr[i]) == i &&
@@ -107,38 +98,30 @@ function doesWordExist(wordsArr, word) {
 //   return false;
 // }
 
+//this example is also nice. Basically we're looping through arr and making if statement.
+//if first found indexOf(element) gives positive which means exists, and
+// after this elements if indexOf(element) returns -1 negative, which means
+//doesn't exists anymore. Then return this element.
+
 // // another way
 // 2-way.
-// //==================================================
+// //==================This is smartest way))================================
 function findUnique(wordsArr) {
   if (wordsArr.length) {
     let uniques = wordsArr.filter(
-      (el, idx, arr) => arr.indexOf(el) === arr.lastIndexOf(el)
+      el => wordsArr.indexOf(el) === wordsArr.lastIndexOf(el)
     );
     return uniques[0];
   }
   return false;
 }
 
-//3-way.
-// //==================================================
-// var arr = [-1, 2, 5, 6, 2, 9, -1, 6, 5, -1, 3];
-// var n = arr.length;
-// var result = [];
-// function nonrep() {
-//   for (var i = 0; i < n; i++) {
-//     for (var j=0 ; j < n; j++)
-//       if (i!=j && arr[i]==arr[j])
-//         break;
-//     if(j==n)
-//         result.push(arr[i]);
-//   }
-//   return result;
-// }
-// console.log(nonrep())
+// this function is looking for the element which has same index
+//from beginning of arr and from end of arr,
+// because fist and last index never gonna equal
+//unless it's one word or element. Very logic.
 
-// console.log(findUnique(arr));
-
+console.log(findUnique(arr));
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
 function getFullName(personObj) {
   //
