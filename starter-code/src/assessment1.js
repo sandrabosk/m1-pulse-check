@@ -66,21 +66,21 @@ function doesWordExist(wordsArr, word) {
 }
 
 // Finding the first non-duplicate (non-repeating) word in an array
-let arr = ['foo', 'bar', 'foo', 'baz', 'bar', 'fizz', 'foo'];
+// let arr = ['foo', 'bar', 'foo', 'baz', 'bar', 'fizz', 'foo'];
 function findUnique(wordsArr) {
   //
 
-  let uniqArr = [];
   for (let i = 0; i < wordsArr.length; i++) {
-    let newArr = [...uniqArr];
-    newArr.splice(i, 1);
-    if (!newArr.includes(wordsArr[i])) {
-      uniqArr.push(wordsArr[i]);
+    if (
+      wordsArr.indexOf(wordsArr[i]) == i &&
+      wordsArr.indexOf(wordsArr[i], i + 1) == -1
+    ) {
+      return wordsArr[i];
     }
   }
-  return uniqArr[0] || false;
+  return false;
 }
-console.log(findUnique(arr));
+// console.log(findUnique(arr));
 
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
 function getFullName(personObj) {
@@ -89,11 +89,11 @@ function getFullName(personObj) {
 }
 
 // Return the largest number in a two dimensional array
-var matrix = [
-  [9, 1, 1331, 42],
-  [3133, 13, 1],
-  [931, 3131, 0],
-];
+// var matrix = [
+//   [9, 1, 1331, 42],
+//   [3133, 13, 1],
+//   [931, 3131, 0],
+// ];
 function maxTwoDimArray(matrix) {
   //
   let max = 0;
@@ -104,7 +104,7 @@ function maxTwoDimArray(matrix) {
     }
   }
   max = Math.max(...maxArr);
-  console.log(max);
+
   return max;
 }
-maxTwoDimArray(matrix);
+// maxTwoDimArray(matrix);
