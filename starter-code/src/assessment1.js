@@ -99,9 +99,9 @@ let arr = ['foo', 'bar', 'foo', 'baz', 'bar', 'asa', 'fizz', 'baz', 'foo'];
 // }
 
 //this example is also nice. Basically we're looping through arr and making if statement.
-//if first found indexOf(element) gives positive which means exists, and
-// after this elements if indexOf(element) returns -1 negative, which means
-//doesn't exists anymore. Then return this element.
+//if first found indexOf(arr[i]) gives the same index 'i' which means(true) exists, and
+// after this element if indexOf(arr[i], i+1) returns -1 negative(notice that second argument i+1 is where to start looping through arr), which means(false)
+//doesn't exists anymore. Then return this arr[i] element.
 
 // // another way
 // 2-way.
