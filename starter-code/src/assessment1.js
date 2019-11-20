@@ -89,19 +89,22 @@ function getFullName(personObj) {
 }
 
 // Return the largest number in a two dimensional array
+var matrix = [
+  [9, 1, 1331, 42],
+  [3133, 13, 1],
+  [931, 3131, 0],
+];
 function maxTwoDimArray(matrix) {
   //
   let max = 0;
+  let maxArr = [];
   for (let i = 0; i < matrix.length; i++) {
-    let max1 = Math.max(matrix[i]);
-
-    let maxArr = [];
-    if (max1 > max) {
-      maxArr.push(max1);
-    } else {
-      maxArr.push(max);
+    for (let j = 0; j < matrix[i].length; j++) {
+      maxArr.push(matrix[i][j]);
     }
-    max = Math.max(maxArr);
   }
+  max = Math.max(...maxArr);
+  console.log(max);
   return max;
 }
+maxTwoDimArray(matrix);
