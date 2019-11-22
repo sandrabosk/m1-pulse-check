@@ -23,15 +23,17 @@ function maxOfTwoNumbers(a, b) {
 
 // Return the largest of 3 numbers
 function maxOfThreeNumbers(a, b, c) {
-  if (a > b) {
-    return a
-  } else if (a > c) {
-    return a
-  } else if (b > c) {
-    return b
-  } else {
-    return c
-  }
+  // if (a > b) {
+  //   return a
+  // } else if (a > c) {
+  //   return a
+  // } else if (b > c) {
+  //   return b
+  // } else {
+  //   return c
+  // }
+  var max = Math.max(a, b, c);
+  return max;
 }
 
 // Calculate the sum of an array of numbers
@@ -77,7 +79,7 @@ function findUnique(wordsArr) {
 
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
 function getFullName(personObj) {
-  return personObj.firstName + personObj.lastName
+  return personObj.firstName + " " + personObj.lastName
 }
 
 // Return the largest number in a two dimensional array
