@@ -1,3 +1,14 @@
+//HELPER FUNCTIONS
+function checkIfNumber(x) { // THIS FUNCTION CHECKS IF THE ARGUMENT TYPE IS NUMBER
+  if (typeof x === "number") return true;
+  else return false;
+}
+
+function checkIfArray(x) { // THIS FUNCTION CHECKS IF THE ARGUMENT TYPE IS ARRAY
+  if (Array.isArray(x)) return true;
+  else return false;
+}
+
 // Write a function that returns the product of 2 numbers
 function product(x, y) {
   return x * y;
@@ -48,22 +59,36 @@ function doesWordExist(wordsArr, word) {
 }
 
 // Finding the first non-duplicate (non-repeating) word in an array
-function findUnique(wordsArr) { // THIS IS MY BEST GUESS BUT DIDN'T WORK
-  let howOften = [];
-  wordsArr.split('').forEach(ch => {
-    if (!howOften[ch])
-    howOften[ch] = 1;
-    else
-    howOften[ch]++;
-  });
+function findUnique(wordsArr) {
+  if (!checkIfArray(wordsArr) || wordsArr.length === 0) return false; // if array is not
+  for (let word of wordsArr) {
+    if (wordsArr.indexOf(word) === wordsArr.lastIndexOf(word)) {
+      return word;
+    }
+  }
 }
 
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
 function getFullName(personObj) {
-  return personObj.firstName + ' ' + personObj.lastName
+  if (
+    !(personObj.constructor === Object) ||
+    personObj.firstName === undefined ||
+    personObj.lastName === undefined
+    )
+    return false;
+  else return `${personObj.firstName} ${personObj.lastName}`;
 }
 
 // Return the largest number in a two dimensional array
 function maxTwoDimArray(matrix) {
-  // NO IDEA
-}
+  if (!checkIfArray(matrix) || matrix.length === 0) return false;
+  let highestNum = 0;
+  matrix.forEach(element => {
+    element.forEach(number => {
+      if (number > highestNum) {
+        highestNum = number;
+      }
+    });
+  });
+  return highestNum;
+  };
