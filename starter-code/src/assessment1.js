@@ -31,38 +31,68 @@ function maxOfThreeNumbers(a, b, c) {
     return c;
   }
 } 
+//is there an easier way?
+// =-=-=-=-=-=-=-=-=-=
 
-// Calculate the sum of an array of numbers
+// Calculate the sum of an array of numbers 
 function sumArray(numbers) {
-  //
+  let sum = 0
+
+  for (let i = 0; i < numbers.length; i++)
+  sum += numbers[i];
+  return sum
 }
+//I read this isn't a preferred method. Why is reduce method preferred?
+// =-=-=-=-=-=-=-=-=-=
+
 
 // Return the largest number of a non-empty array
 function maxOfArray(numbers) {
-  //
+  return Math.max.apply(null, numbers);
 }
+// not 100% on this. 
+// =-=-=-=-=-=-=-=-=-=
+
 
 // Return the longest string in an array
 function longestString(strings) {
-  //
+  let long1 = '';
+
+  for (i = 0; i < strings.length; i++) {
+    if (strings[i].length > long1.length){
+      long1 = strings[i];
+    }
+    return long1
+  }
 }
+// not 100% on this. 
+// =-=-=-=-=-=-=-=-=-=
+
 
 // Return whether a word is in an array
 function doesWordExist(wordsArr, word) {
-  //
+  // if (wordsArr.includes(word, 0)){
+  //   return true;
+  // } else {
+  //   return false;
+  // }
+
+  // OR
+
+  return wordsArr.includes(word);
 }
 
 // Finding the first non-duplicate (non-repeating) word in an array
 function findUnique(wordsArr) {
-  //
+  // meh?
 }
 
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
 function getFullName(personObj) {
-//
+  return `${personObj.firstName} ${personObj.lastName}`;
 }
 
 // Return the largest number in a two dimensional array
 function maxTwoDimArray(matrix) {
-  //
+  // meh? 
 }
