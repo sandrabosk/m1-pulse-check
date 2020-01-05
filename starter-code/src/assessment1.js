@@ -42,6 +42,9 @@ function sumArray(numbers) {
 
 // Return the largest number of a non-empty array
 function maxOfArray(numbers) {
+  console.log(Math.max(...array));
+  
+  return array.length -1
   // 
 }
 
@@ -63,9 +66,19 @@ function doesWordExist(wordsArr, word) {
 doesWordExist(); // doesWordExist() worked on repl.it but not sure why it did not work on this test
 
 // Finding the first non-duplicate (non-repeating) word in an array
-function findUnique(wordsArr) {
-  //
+let array = [2, 2, 3, 4, 4];
+
+let firstUniqueWord = array[0]
+
+function findUnique() {
+  for(let i = 0; i < array.length; i++){
+    if(i === firstUniqueWord){
+      console.log(array[i]);
+    }
+  }
 }
+
+findUnique();
 
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
 function getFullName(firstName, lastName) {
@@ -80,5 +93,11 @@ getFullName(); // getFullName() worked on repl.it but not sure why it did not wo
 
 // Return the largest number in a two dimensional array
 function maxTwoDimArray(matrix) {
-  //
+  let maxNumber = array[0];
+  for(let i = 1; i < array.length; i++){
+    if(array[i] > maxNumber){
+      maxNumber = array[i];
+    }
+  }
+  return maxNumber;
 }
