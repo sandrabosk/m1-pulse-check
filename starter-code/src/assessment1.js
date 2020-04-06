@@ -6,12 +6,14 @@ function product(x, y) {
 
 // Write a function that returns whether a given number is even
 function isEven(num) {
+  if (isNaN(num)) return false;
   if (num % 2 == 0) return true;
   else return false;
 }
 
 // Return the largest of 2 numbers
 function maxOfTwoNumbers(a, b) {
+  if (isNaN(a) || isNaN(b)) return false;
   if (a > b) return a;
   else return b;
 }
