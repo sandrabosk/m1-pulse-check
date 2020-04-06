@@ -58,14 +58,8 @@ function longestString(strings) {
   if (strings.length === 0) return false;
   if (!Array.isArray(strings)) return false;
   let longest = "";
-  let numbers = [];
   strings.forEach(str => {
-    if (str.length > longest.length) longest = str;
-    if (!(isNaN(str))) numbers.push(str);
-  });
-  numbers.forEach(num => {
-    if (type(longest) && num > longest.length) longest = num;
-    if (!(isNaN(longest)) && num > longest) longest = num;
+    if (typeof (str) === "string" && str.length > longest.length) longest = str;
   });
   return longest;
 }
