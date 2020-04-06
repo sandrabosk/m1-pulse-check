@@ -88,7 +88,6 @@ function findUnique(wordsArr) {
       }
     }
   }
-  return result;
 }
 
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
