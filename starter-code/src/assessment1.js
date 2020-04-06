@@ -47,12 +47,13 @@ function maxOfArray(numbers) {
 
 // Return the longest string in an array
 function longestString(strings) {
-  let longest = strings[i].length;
+  let longest = "";
   for (let i = 0; i < strings.length; i++) {
-    if (longest > strings[i].length--) {
+    if (longest.length < strings[i].length) {
+      longest = strings[i];
     }
+    return longest;
   }
-  return longest;
 }
 
 // Return whether a word is in an array
