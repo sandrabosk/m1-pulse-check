@@ -47,15 +47,20 @@ function longestString(strings) {
 
 // Return whether a word is in an array
 function doesWordExist(wordsArr, word) {
-  return wordsArr.includes(word); //method "includes" searches array for input parameter.
+  return wordsArr.includes(word); //method "includes" searches array for the input parameter.
 }
 
 // Finding the first non-duplicate (non-repeating) word in an array
 function findUnique(wordsArr) {
-  let tempArr = [];
-  wordsArr.forEach(word => {
-    
-  })
+  let word = '';
+  let words = [...wordsArr]
+  if (wordsArr.length === 0) return false;
+  for (let i = 0; i < wordsArr.length; i++){
+    word = wordsArr[i];
+    words.shift();
+    if (!words.includes(word)) return word;
+  }
+
 }
 
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
