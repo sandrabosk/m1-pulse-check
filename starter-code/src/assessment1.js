@@ -21,7 +21,13 @@ function maxOfTwoNumbers(a, b) {
 
 // Return the largest of 3 numbers
 function maxOfThreeNumbers(a, b, c) {
-  //
+  if(a > b && a > c){//conditional to check which number is larger than the others. 
+    return a;
+  }
+  else if(b > a && b > c){
+    return b;
+  }
+  else return c;
 }
 
 // Calculate the sum of an array of numbers
