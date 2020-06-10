@@ -1,11 +1,14 @@
 // Write a function that returns the product of 2 numbers
 function product(x, y) {
-  return (x * y);
+  return (x * y); //multiplies both parameters to return product.
 }
 
 // Write a function that returns whether a given number is even
 function isEven(num) {
-  //
+  if(num%2 === 0){ //if remainder of num is 0 after modulo operator, return true.
+    return true;
+  }
+  else return false;
 }
 
 // Return the largest of 2 numbers
