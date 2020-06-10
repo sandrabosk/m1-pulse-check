@@ -65,7 +65,12 @@ function longestString(strings) {
 
 // Return whether a word is in an array
 function doesWordExist(wordsArr, word) {
-  //
+  for(let i = 0; i < wordsArr.length; i++){
+    if(wordsArr.includes(word) === true){
+      return true;
+    } 
+    else return false;
+  }
 }
 
 // Finding the first non-duplicate (non-repeating) word in an array
@@ -75,7 +80,7 @@ function findUnique(wordsArr) {
 
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
 function getFullName(personObj) {
-  //
+ 
 }
 
 // Return the largest number in a two dimensional array
