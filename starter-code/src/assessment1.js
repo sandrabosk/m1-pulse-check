@@ -1,5 +1,6 @@
 // Write a function that returns the product of 2 numbers
 function product(x, y) {
+  if(x === null || x === undefined || y === null || y == undefined) return false;
   return (x * y); //multiplies both parameters to return product.
 }
 
