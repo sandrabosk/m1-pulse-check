@@ -80,7 +80,7 @@ function findUnique(wordsArr) {
 
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
 function getFullName(personObj) {
- 
+  return `${personObj.firstName } ${personObj.lastName}`;
 }
 
 // Return the largest number in a two dimensional array
