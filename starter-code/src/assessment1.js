@@ -13,7 +13,10 @@ function isEven(num) {
 
 // Return the largest of 2 numbers
 function maxOfTwoNumbers(a, b) {
-  //
+  if ( a > b){ //return either parameter if it is larger than the other. 
+    return a;
+  }
+  else return b;
 }
 
 // Return the largest of 3 numbers
