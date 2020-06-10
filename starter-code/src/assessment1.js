@@ -37,9 +37,17 @@ function maxOfThreeNumbers(a, b, c) {
 // Calculate the sum of an array of numbers
 function sumArray(numbers) {
   let sum = 0;
-  if (!numbers.length) return 0; //checks for empty array before beginning loop.
+  if (!numbers.length){ //checks for empty array before beginning loop.
+    return 0;
+  }  
+  else if (typeof numbers !== "object"){
+    return false;
+  }
   for (i = 0; i < numbers.length; i++) { 
-    sum += numbers[i]; //for each element in the array, add the value to the current value of sum.
+    if(typeof numbers[i] !== "number"){
+      return false;
+    }
+    else sum += numbers[i]; //for each element in the array, add the value to the current value of sum.
   }
   return sum;
 }
