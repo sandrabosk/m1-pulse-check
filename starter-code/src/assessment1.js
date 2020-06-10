@@ -43,9 +43,9 @@ function sumArray(numbers) {
 // Return the largest number of a non-empty array
 function maxOfArray(numbers) {
   let largestNumber = 0;
-  if (!numbers.length) return 0;
+  if (!numbers.length) return 0; //checks for empty array before beginning loop.
   for(let i = 0; i < numbers.length; i++){
-    if(numbers[i] > largestNumber) {
+    if(numbers[i] > largestNumber) { //iterate through the array and update largestNumber to the value of the current largest number.
       largestNumber = numbers[i];
     }
   }
@@ -54,7 +54,13 @@ function maxOfArray(numbers) {
 
 // Return the longest string in an array
 function longestString(strings) {
-  //
+  let largestString = "";
+  for(let i = 0; i < strings.length; i++){
+    if (strings[i].length > largestString.length){
+      largestString = strings[i]; //checks if the length of the current string in the array is longer than longestString and updates the value of the variable if true.
+    }
+  }
+  return largestString;
 }
 
 // Return whether a word is in an array
