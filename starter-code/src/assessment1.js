@@ -75,7 +75,15 @@ function doesWordExist(wordsArr, word) {
 
 // Finding the first non-duplicate (non-repeating) word in an array
 function findUnique(wordsArr) {
-  //
+  let uniqueWord = "";
+  if(!wordsArr.length) return false;
+  for(let i = 0; i < wordsArr.length; i++){
+    if (i === wordsArr.indexOf(wordsArr[i]) && i === wordsArr.lastIndexOf(wordsArr[i])){
+      uniqueWord = wordsArr[i];
+      break;
+    }
+  }
+  return uniqueWord;
 }
 
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
