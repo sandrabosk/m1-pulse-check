@@ -93,5 +93,11 @@ function getFullName(personObj) {
 
 // Return the largest number in a two dimensional array
 function maxTwoDimArray(matrix) {
-  //
+  let largestNum = 0;
+  for(let i = 0; i < matrix.length; i++){
+    if(matrix[0][i] > largestNum && matrix[1][i] > largestNum && matrix[2][i] > largestNum){
+    largestNum = matrix[i][i];
+    }
+  }
+  return largestNum;
 }
