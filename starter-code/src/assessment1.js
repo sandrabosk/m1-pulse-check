@@ -55,7 +55,12 @@ function sumArray(numbers) {
 // Return the largest number of a non-empty array
 function maxOfArray(numbers) {
   let largestNumber = 0;
-  if (!numbers.length) return 0; //checks for empty array before beginning loop.
+  if (!numbers.length) {
+    return false; //checks for empty array before beginning loop.
+  }
+  else if (typeof numbers !== "object"){
+    return false;
+  }
   for(let i = 0; i < numbers.length; i++){
     if(numbers[i] > largestNumber) { //iterate through the array and update largestNumber to the value of the current largest number.
       largestNumber = numbers[i];
