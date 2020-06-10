@@ -42,7 +42,14 @@ function sumArray(numbers) {
 
 // Return the largest number of a non-empty array
 function maxOfArray(numbers) {
-  //
+  let largestNumber = 0;
+  if (!numbers.length) return 0;
+  for(let i = 0; i < numbers.length; i++){
+    if(numbers[i] > largestNumber) {
+      largestNumber = numbers[i];
+    }
+  }
+  return largestNumber;
 }
 
 // Return the longest string in an array
