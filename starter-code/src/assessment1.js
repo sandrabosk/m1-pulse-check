@@ -62,15 +62,14 @@ function doesWordExist(wordsArr, word) {
 
 // Finding the first non-duplicate (non-repeating) word in an array
 function findUnique(wordsArr) {
-  let sortedArray = wordsArr.slice().sort();
-  let resultArray = [];
-
-  for (var i = 0; i < sortedArray.length; i++) {
-    if (sortedArray[i + 1] !== sortedArray[i]) {
-      resultArray.push(sortedArray[i + 1]);
+  if (wordsArr.length === 0 || !Array.isArray(wordsArr)) {
+    return false;
+  }
+  for (let i = 0; i < wordsArr.length; i++) {
+    if (wordsArr.indexOf(wordsArr[i], i + 1) === -1) {
+      return wordsArr[i];
     }
   }
-  return resultArray;
 }
 
 
