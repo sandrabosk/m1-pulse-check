@@ -75,14 +75,14 @@ function doesWordExist(wordsArr, word) {
 }
 
 // Finding the first non-duplicate (non-repeating) word in an array
-function findUnique(wordsArr) {
-  for (i = 0; i < wordsArr.length; i++){
-    var theWord = wordsArr.chartAt(i);
-    if (wordsArr.indexOf(theWord) == 1 && wordsArr.indexOf(theWord, i + 1) == -1) {
-      return theWord;
-    }
-  }
-  return null;
+//function findUnique(wordsArr) {
+//  for (i = 0; i < wordsArr.length; i++){
+//    var theWord = wordsArr.chartAt(i);
+//    if (wordsArr.indexOf(theWord) == 1 && wordsArr.indexOf(theWord, i + 1) == -1) {
+//      return theWord;
+//    }
+//  }
+//  return null;
 }
 
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
