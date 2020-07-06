@@ -59,14 +59,10 @@ function findUnique(wordsArr) {
   if(wordsArr.length === 0){
     return false;
   }else{
-    for(var i = 0; i < wordsArr.length;i++){
-      if(wordsArr.includes(wordsArr[i])){
-        return false;
-      }else return wordsArr[i];
+    const nduplicate = wordsArr.find(word =>wordsArr.indexOf(word) === wordsArr.lastIndexOf(word))
+      return nduplicate;
     }
-  }  
-}
-
+  }
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
 function getFullName(personObj) {
   return `${personObj.firstName} ${personObj.lastName}`;
