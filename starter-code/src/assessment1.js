@@ -1,41 +1,75 @@
 // Write a function that returns the product of 2 numbers
 function product(x, y) {
-  //
+  return x * y
 }
 
 // Write a function that returns whether a given number is even
 function isEven(num) {
-  //
+  return num % 2 === 0
 }
 
 // Return the largest of 2 numbers
 function maxOfTwoNumbers(a, b) {
-  //
+  if ( a > b ) {
+  return a
+  } else {
+    return b
+  }
 }
 
 // Return the largest of 3 numbers
 function maxOfThreeNumbers(a, b, c) {
-  //
+  if (a > b && a > c) {
+    return a
+  } else if (b > c) {
+    return b
+  } else {
+    return c
+  }
 }
 
 // Calculate the sum of an array of numbers
-function sumArray(numbers) {
-  //
+ function sumArray(numbers) {
+//   numbers.reduce((accumulator, currentValue) => accumulator + currentValue)
+// }
+let sum = 0;
+if (numbers.length==0){
+  return 0
+}
+for (let i = 0; i < numbers.length; i++){
+ sum += numbers[i];
+
+}
+return sum;
+
 }
 
 // Return the largest number of a non-empty array
 function maxOfArray(numbers) {
-  //
+  numbers.sort((a, b) => b - a);;
+  return numbers[0]
+
+
 }
 
 // Return the longest string in an array
 function longestString(strings) {
-  //
+  strings.sort((a, b) => b - a);
+  return strings[0]
 }
 
 // Return whether a word is in an array
 function doesWordExist(wordsArr, word) {
-  //
+  // if (wordsArr.split(word, 1)){
+  // return true
+  // } else {
+  //   return false
+  // }
+
+  if (wordsArr.indexOf(word) ) {
+    return true
+  }
+
 }
 
 // Finding the first non-duplicate (non-repeating) word in an array
