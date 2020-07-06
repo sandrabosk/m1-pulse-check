@@ -31,16 +31,8 @@ const longestString = strings => strings.reduce((a, b) =>
 const doesWordExist = (wordsArr, word) => wordsArr.includes(word)
 
 // Finding the first non-duplicate (non-repeating) word in an array
-
-const findUnique = wordsArr => {
-  let newArray = [];
-  wordsArr.forEach((element) => {
-  if (!wordsArr.includes(element)) {
-    newArray.push(element);
-  }
-  })
-  return newArray
-}
+// i was proving
+const findUnique = wordsArr => wordsArr.filter(element => !wordsArr.includes(element));
 
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
 function getFullName(personObj) {
