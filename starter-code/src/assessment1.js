@@ -1,46 +1,45 @@
 // Write a function that returns the product of 2 numbers
-function product(x, y) {
-  //
-}
+const product = (x,y) => x*y;
 
 // Write a function that returns whether a given number is even
-function isEven(num) {
-  //
-}
+const isEven = num => num % 2 === 0 ? true : false;
 
 // Return the largest of 2 numbers
-function maxOfTwoNumbers(a, b) {
-  //
-}
+const maxOfTwoNumbers = (a, b) => a > b ? a : b;
+
 
 // Return the largest of 3 numbers
-function maxOfThreeNumbers(a, b, c) {
-  //
-}
+const maxOfThreeNumbers = (a, b, c) => Math.max(a, b, c);
+
 
 // Calculate the sum of an array of numbers
-function sumArray(numbers) {
-  //
-}
+const sumArray = (numbers) => numbers.length!== 0 ? numbers.reduce((currentValue, currentIndex) => currentValue+ currentIndex) : 0;
 
 // Return the largest number of a non-empty array
-function maxOfArray(numbers) {
-  //
-}
+const maxOfArray = numbers => Math.max(...numbers);
 
 // Return the longest string in an array
-function longestString(strings) {
-  //
-}
+const longestString = strings => strings.reduce((a, b) => 
+    (a.length > b.length)
+    ? 
+    a : (a.length===b.length)
+    ?
+    a : b
+  );
 
 // Return whether a word is in an array
-function doesWordExist(wordsArr, word) {
-  //
-}
+const doesWordExist = (wordsArr, word) => wordsArr.includes(word)
 
 // Finding the first non-duplicate (non-repeating) word in an array
-function findUnique(wordsArr) {
-  //
+
+const findUnique = wordsArr => {
+  let newArray = [];
+  wordsArr.forEach((element) => {
+  if (!wordsArr.includes(element)) {
+    newArray.push(element);
+  }
+  })
+  return newArray
 }
 
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
