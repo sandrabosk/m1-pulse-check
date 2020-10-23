@@ -21,35 +21,44 @@ function maxOfTwoNumbers(a, b) {
 
 // Return the largest of 3 numbers
 function maxOfThreeNumbers(a, b, c) {
-  let largest = a;
-  if (b > a) {
-    largest = b;
+  if (typeof a !== "number" || typeof b !== "number" || typeof c !== "number") {
+    return false;
+  } else {
+    let largest = a;
+    if (b > a) {
+      largest = b;
+    }
+    if (c > largest) {
+      largest = c;
+    }
+    return largest;
   }
-  if (c > largest) {
-    largest = c;
-  }
-  return largest;
 }
 
 // Calculate the sum of an array of numbers
+
 function sumArray(numbers) {
-  if (typeof numbers !== "object") {
+  let result = 0;
+
+  if (Array.isArray(numbers) == false) {
     return false;
-  } else if (numbers.length == 0) {
-    return 0;
-  } else if (numbers.includes(typeof "number") == false) {
-    return false;
-  } else {
-    let total = 0;
-    numbers.forEach((item) => {
-      total += item;
-    });
-    return total;
   }
+
+  if (numbers.every((item) => typeof item === "number")) {
+    numbers.forEach((item) => {
+      result += item;
+    });
+    return result;
+  }
+  return false;
 }
 
 // Return the largest number of a non-empty array
 function maxOfArray(numbers) {
+  if (numbers.length == 0 || typeof numbers !== "object") {
+    return false;
+  }
+
   let largestNumber = 0;
   numbers.forEach((item) => {
     if (item > largestNumber) {
@@ -61,9 +70,17 @@ function maxOfArray(numbers) {
 
 // Return the longest string in an array
 function longestString(strings) {
-  let largestString = 0;
-  strings.forEach((item) => {
-    if (item.length > largestString) {
+  if (Array.isArray(strings) == false || strings.length == 0) {
+    return false;
+  }
+
+  let largestStringlength = 0;
+
+  let cleanedStrings = strings.filter((item) => typeof item == "string");
+
+  cleanedStrings.forEach((item) => {
+    if (item.length > largestStringlength) {
+      largestStringlength = item.length;
       largestString = item;
     }
   });
@@ -72,36 +89,53 @@ function longestString(strings) {
 
 // Return whether a word is in an array
 function doesWordExist(wordsArr, word) {
+  if (Array.isArray(wordsArr) == false) {
+    return false;
+  }
+
   return wordsArr.includes(word);
 }
 
 // Finding the first non-duplicate (non-repeating) word in an array
 function findUnique(wordsArr) {
-  if (wordsArr.length == 0) {
+  if (Array.isArray(wordsArr) == false || wordsArr.length === 0) {
     return false;
-  } else {
-    count = 0;
-    for (i = 0; i < wordsArr.length; i++) {
-      let word = wordsArr[i];
-      wordsArr.forEach((item) => {
-        if (item == word) {
-          count++;
-        }
-      });
-    }
   }
-  if (count == 1) {
-    return word;
+  countArray = [];
+
+  for (let i = 0; i < wordsArr.length; i++) {
+    let count = 0;
+    wordsArr.forEach((item) => {
+      if (item == wordsArr[i]) {
+        count++;
+      }
+    });
+    countArray.push(count);
   }
+
+  const neededIndex = countArray.indexOf(1);
+  return wordsArr[neededIndex];
 }
 
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
 function getFullName(personObj) {
+  if (Array.isArray(personObj)) {
+    return false;
+  }
+
+  if (personObj.firstName == undefined || personObj.lastName == undefined) {
+    return false;
+  }
+
   return `${personObj.firstName} ${personObj.lastName}`;
 }
 
 // Return the largest number in a two dimensional array
 function maxTwoDimArray(matrix) {
+  if (Array.isArray(matrix) == false || matrix.length == 0) {
+    return false;
+  }
+
   let largest = 0;
   for (let i = 0; i < matrix.length; i++) {
     for (let j = 0; j < matrix[i].length; j++) {
