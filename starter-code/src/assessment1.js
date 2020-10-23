@@ -75,7 +75,7 @@ function longestString(strings) {
   let referenceI = 0;
   let index = 0;
   strings.forEach((element, index) => {
-    if (typeof elem == "string") {
+    if (typeof elem === "string") {
       if (element.length > referNum) {
         referNum = element.length;
         referenceI = index;
@@ -87,11 +87,17 @@ function longestString(strings) {
 
 // Return whether a word is in an array
 function doesWordExist(wordsArr, word) {
+  if (typeof wordsArr != "object") {
+    return false;
+  }
   return wordsArr.includes(word);
 }
 
 // Finding the first non-duplicate (non-repeating) word in an array
 function findUnique(wordsArr) {
+  if (typeof wordsArr != "object") {
+    return false;
+  }
   if (wordsArr.length == 0) {
     return false;
   }
