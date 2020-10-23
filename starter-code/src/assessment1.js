@@ -44,15 +44,18 @@ function maxOfArray(numbers) {
 
 // console.log(maxOfArray(nums));
 
+const words = ["hej", "hello", "hello", "hej", "ok"];
+
 // Return the longest string in an array
 function longestString(strings) {
-  const sorted = strings.sort((a, b) => {
+  const sortedArr = strings.sort((a, b) => {
     return b.length - a.length;
   });
-  return sorted.slice(0, 1);
+  const longestString = sortedArr.slice(0, 1);
+  return longestString[0];
 }
 
-console.log(maxOfArray(nums));
+// console.log(longestString(words));
 
 // Return whether a word is in an array
 function doesWordExist(wordsArr, word) {
@@ -65,6 +68,9 @@ function doesWordExist(wordsArr, word) {
 
 // Finding the first non-duplicate (non-repeating) word in an array
 function findUnique(wordsArr) {
+  if (wordsArr.length === 0) {
+    return false;
+  }
   let unique = "";
   wordsArr.forEach((el, i, arr) => {
     if (unique !== el) {
@@ -74,7 +80,7 @@ function findUnique(wordsArr) {
   return unique;
 }
 
-// console.log(findUnique(words));
+console.log(findUnique(words));
 
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
 function getFullName(personObj) {
@@ -83,4 +89,6 @@ function getFullName(personObj) {
 }
 
 // Return the largest number in a two dimensional array
-function maxTwoDimArray(matrix) {}
+function maxTwoDimArray(matrix) {
+  //
+}
