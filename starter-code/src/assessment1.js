@@ -52,7 +52,16 @@ function maxOfArray(numbers) {
 
 // Return the longest string in an array
 function longestString(strings) {
-  //
+  let longer = " ";
+
+  for (let i = 0; i < strings.length; i++) {
+    if (strings[i].length > longer.length) {
+      longer = strings[i];
+    } else {
+      continue;
+    }
+  }
+  return longer;
 }
 
 // Return whether a word is in an array
@@ -69,7 +78,10 @@ function findUnique(wordsArr) {}
 
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
 function getFullName(personObj) {
-  // use here a reduce method to create a new string with the number!!
+  //Destructure the obj
+  const { firstName, lastName } = personObj;
+  fullName = firstName + " " + lastName;
+  return fullName;
 }
 
 // Return the largest number in a two dimensional array
