@@ -66,21 +66,24 @@ function maxOfArray(numbers) {
 }
 
 // Return the longest string in an array
-function longestString(strings) {
-  if (strings.length === 0 || typeof strings !== "object") {
+function longestString(array) {
+  if (array.length === 0 || typeof array !== "object") {
     return false;
   }
-  let filteredArray = strings.filter((item) => {
-    return typeof item === "string";
+
+  let lengthArray = array.map((item) => {
+    if (typeof item === "string") {
+      return item.length;
+    } else {
+      return 0;
+    }
   });
 
-  let numArray = filteredArray.map((word) => {
-    return word.length;
-  });
+  let biggestNum = Math.max(...lengthArray);
 
-  let biggestNum = Math.max(...numArray);
-  let indexOfLongestWord = numArray.indexOf(biggestNum); //index within numArray
-  return strings[indexOfLongestWord];
+  let indexOfLongestString = lengthArray.indexOf(biggestNum);
+
+  return array[indexOfLongestString];
 }
 
 // Return whether a word is in an array
