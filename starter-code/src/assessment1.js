@@ -121,13 +121,19 @@ function doesWordExist(wordsArr, word) {
 
 // Finding the first non-duplicate (non-repeating) word in an array
 function findUnique(wordsArr) {
-  if (!wordsArr || wordsArr === []){
+  if (!wordsArr || wordsArr === [] || wordsArr.length === 0){
     return false;
   }
-  for (var i=0; i < wordsArr.length; i++){
-    for (var j=i+1; j < wordsArr.length; j++){
+  // find the first different element
+  for (let i=0; i < wordsArr.length; i++){
+    for (let j=i+1; j < wordsArr.length; j++){
+      console.log("compare "+i+" to "+j)
       if (wordsArr[i] !== wordsArr[j]){
-        return wordsArr[j];
+         //wordsArr[j] is now the first different element
+         //check now if it is not repeated
+         if (!wordsArr.splice(j,j+1).includes(wordsArr[j])){
+           return wordsArr[j];
+         }
       }
     }
     if (i === wordsArr.length-1 && j === wordsArr.length){
@@ -138,10 +144,16 @@ function findUnique(wordsArr) {
 
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
 function getFullName(personObj) {
-  //
+  fullName = personObj.firstName +" "+ personObj.lastName;
+  return fullName;
 }
 
 // Return the largest number in a two dimensional array
 function maxTwoDimArray(matrix) {
-  //
+  let bestScores = [];
+  for (let i = 0; i<matrix.length; i++){
+      bestScores.push(Math.max(...matrix[i]));
+      console.log(bestScores)
+  }
+  return Math.max(...bestScores);
 }
