@@ -55,30 +55,85 @@ function maxOfArray(numbers) {
   return maxNumber;
   //
 }
-
 // Return the longest string in an array
 function longestString(strings) {
   if (strings === [] || !strings){
     return 0;
   }
-  const longestStr = strings.reduce ((total, el)=> {
+  const lengths = strings.map ((el)=>{
+    return el.length;
+  });
+  //
+  let winnerIndex;
+  const longestStrIndex = lengths.reduce((total, el, i)=>{
+    if (total < el){
+      total = el;
+      winnerIndex = i;
+    }
+    return total;
+  }, 0);
+  return strings[winnerIndex];
+}
+
+/*//Return the longest string in an array: THIS ALSO WORKS!
+function longestString(strings) {
+  if (strings === [] || !strings){
+    return 0;
+  }
+  let indexOfLongest = 0;
+  const longestStr = strings.reduce ((total, el, i)=> {
     if (total < el.length){
       total = el.length;
+      indexOfLongest = i;
+    } else {
+      total = strings[i-1].length;
     }
-    return el;
+    if (i === strings.length - 1){
+      return indexOfLongest;
+    } 
+    return total;
   }, 0);
-  return longestStr;
-  //
-}
+  return strings[longestStr];
+}*/
 
 // Return whether a word is in an array
 function doesWordExist(wordsArr, word) {
-  //
+  let wordExists = false;
+  wordsArr.forEach((el) => {
+    if (word === el){
+      wordExists = true;
+    }
+  });
+  return wordExists;
 }
+/*// Return whether a word is in an array: THIS ALSO WORKS
+function doesWordExist(wordsArr, word) {
+  let wordExists = false;
+  for (i=0; i < wordsArr.length; i++){
+    if (word === wordsArr[i]){
+      wordExists = true;
+    }
+    if (i === wordsArr.length-1){
+      return wordExists;
+    } 
+  }
+}*/
 
 // Finding the first non-duplicate (non-repeating) word in an array
 function findUnique(wordsArr) {
-  //
+  if (!wordsArr || wordsArr === []){
+    return false;
+  }
+  for (var i=0; i < wordsArr.length; i++){
+    for (var j=i+1; j < wordsArr.length; j++){
+      if (wordsArr[i] !== wordsArr[j]){
+        return wordsArr[j];
+      }
+    }
+    if (i === wordsArr.length-1 && j === wordsArr.length){
+        return false;
+    }
+  }
 }
 
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
