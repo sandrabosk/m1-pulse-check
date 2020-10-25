@@ -50,7 +50,14 @@ function maxOfArray(numbers) {
 
 // Return the longest string in an array
 function longestString(strings) {
+var longestStr = "";
 
+  strings.forEach(function(getWord) {
+    if(getWord.length > longestStr.length) {
+    longestStr = getWord;
+      }
+    });
+    return longestStr;
 }
 
 // Return whether a word is in an array
@@ -67,6 +74,17 @@ function doesWordExist(wordsArr, word) {
 
 // Finding the first non-duplicate (non-repeating) word in an array
 
+function findUnique(wordsArr){
+  
+  if (wordsArr.length === 0){
+    return false;
+  } else {
+    var uniqueArray = wordsArr.filter((word, i) => {
+      return wordsArr.indexOf(word, i + 1) === -1;
+    });
+    }
+  return uniqueArray[0];
+}
 
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
 function getFullName(personObj) {
@@ -75,5 +93,5 @@ function getFullName(personObj) {
 
 // Return the largest number in a two dimensional array
 function maxTwoDimArray(matrix) {
-
+  return Math.max(...[].concat(...matrix));
 }
