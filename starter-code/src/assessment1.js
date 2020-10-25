@@ -5,7 +5,9 @@ const stringsArr = [
   "apple",
   "passion fruit",
   "cabbage",
+  "cabbage",
   "apple",
+  "passion fruit",
   "banana",
 ];
 const x = 23;
@@ -15,9 +17,13 @@ const a = 42;
 const b = 11;
 const c = 12;
 
-const matrix = 
-
-[[12, 36, 2, 8], [67, 12, 13, 99], [35, 67, 89, 4], [0, 34, 19, 20], [30, 5, 1, 78]];
+const matrix = [
+  [12, 36, 2, 8],
+  [67, 12, 13, 99],
+  [35, 67, 89, 4],
+  [0, 34, 19, 20],
+  [30, 5, 1, 78],
+];
 
 function product(x, y) {
   return x * y;
@@ -141,8 +147,13 @@ console.log(doesWordExist(stringsArr, "banana"));
 
 function findUnique(wordsArr) {
   const uniqueWords = wordsArr.filter((el, i, arr) => arr.indexOf(el) === i);
-  return uniqueWords[0];
+  if (uniqueWords !== []) {
+    return uniqueWords[0];
+  } else return false;
 }
+
+console.log("Find Unique");
+console.log(findUnique(stringsArr));
 
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
 function getFullName(personObj) {
