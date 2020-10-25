@@ -54,13 +54,17 @@
 
 // // Finding the first non-duplicate (non-repeating) word in an array
 // function findUnique(wordsArr) {
-//   let uniqueWords = [];
-//   for (let i = 0; i < wordsArr.length; i++) {
-//     if (wordsArr.indexOf(wordsArr[i], i + 1) === -1) {
-//       uniqueWords.push(wordsArr[i]);
+//   if (wordsArr.length === 0) {
+//     return false
+//   } else {
+//     let uniqueWords = [];
+//     for (let i = 0; i < wordsArr.length; i++) {
+//       if (wordsArr.indexOf(wordsArr[i], i + 1) === -1) {
+//         uniqueWords.push(wordsArr[i]);
+//       }
 //     }
+//     return uniqueWords[0];
 //   }
-//   return uniqueWords[0];
 // }
 
 // // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
@@ -136,38 +140,54 @@ function maxOfArray(numbers) {
 
 //iteration 7
 function longestString(stringsArr) {
-  if (stringsArr.length === 0) return false
-  const longestStr = stringsArr.sort(function (total, el) {
-    return el.length - total.length;
-  })
-  return longestStr[0];
-
+  if (stringsArr.length !== 0 && Array.isArray(stringsArr)) {
+    const longestStr = stringsArr.sort(function (total, el) {
+      return el.length - total.length;
+    })
+    return longestStr[0];
+  } else {
+    return false;
+  }
 }
 
 // // iteration 8
 function doesWordExist(wordsArr, word) {
-  if (wordsArr.length === 0) return false;
-
-  const chosenWord = word
-  const isExistingWord = wordsArr.filter(function (word) {
-    return word === chosenWord
-  })
-
-  return isExistingWord == chosenWord
+  if (wordsArr.length !== 0 && Array.isArray(wordsArr)) {
+    const chosenWord = word;
+    const isExistingWord = wordsArr.filter(function (word) {
+      return word === chosenWord;
+    })
+    return isExistingWord == chosenWord;
+  } else {
+    return false;
+  }
 }
 
 
 // //iteration 9
-// findUnique(wordsArr)
+function findUnique(wordsArr) {
+  if (wordsArr.length !== 0 && Array.isArray(wordsArr)) {
+    let uniqueWord = wordsArr.filter(function (word, i) {
+      return wordsArr.indexOf(word, i + 1) === -1;
+    })
+    return uniqueWord[0];
+  } else {
+    return false;
+  }
+
+}
 
 // //iteration 10
-// function getFullName(personObj) {
+function getFullName(personObj) {
+  console.log(typeof personObj)
+  if ((typeof personObj === 'object') && (personObj !== null) && (!Array.isArray(personObj))) {
+    return personObj.firstName + ' ' + personObj.lastName;
 
+  } else {
 
-//   return personObj.firstName + ' ' + personObj.lastName;
-
-
-// }
+    return false;
+  }
+}
 // // }
 
 // //iteration 11
@@ -188,3 +208,5 @@ function maxTwoDimArray(matrix) {
     return largestNumber
   }
 }
+
+
