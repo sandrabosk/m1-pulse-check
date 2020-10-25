@@ -8,23 +8,23 @@ function product(x, y) {
 function isEven(num) {
   const isEven = (num % 2) === 0;
   return isEven;
-}
+};
 
 // Return the largest of 2 numbers
 function maxOfTwoNumbers(a, b) {
   const maxNum = Math.max(a, b);
   return maxNum;
-}
+};
 
 // Return the largest of 3 numbers
 function maxOfThreeNumbers(a, b, c) {
   const maxNum = Math.max(a, b, c);
   return maxNum;
-}
+};
 
 // Calculate the sum of an array of numbers
 function sumArray(numbers) {
-  if (numbers.length !== 0) {
+  if (numbers.length > 0) {
     const sumElements = numbers.reduce(function (total, el) {
       return total + el;
     });
@@ -70,13 +70,23 @@ function doesWordExist(wordArr, word) {
 };
 
 // Finding the first non-duplicate (non-repeating) word in an array
-// function findUnique(wordsArr) {
-//   let uniqueElems = [];
-//   uniqueElems = wordsArr.filter(word => {
-//     uniqueElems.includes(word) === false;
-//   });
-//   return uniqueElems;
-// };
+function findUnique(wordsArr) {
+  if (wordsArr.length > 0) {
+  let uniqueArr = [];
+  for (i=0; i<wordsArr.length; i++) {
+    let checkWord = wordsArr.pop(i);
+    if (wordsArr.includes(checkWord)) {
+      let duplicateIndex = wordsArr.indexOf(checkWord);
+      wordsArr.splice(duplicateIndex, 1);
+    } else {
+      uniqueArr.unshift(checkWord);
+    };
+  };
+    return uniqueArr[0];
+  } else {
+    return false
+  };
+};
 
 // Get the fullName from the object { firstName: 'Tony', lastName: 'Stark'}
 function getFullName(personObj) {
@@ -86,11 +96,11 @@ function getFullName(personObj) {
 
 // Return the largest number in a two dimensional array
 function maxTwoDimArray(matrix) {
-  let maxMatrix = 0;
+  let maxOfEachArr = [];
   for (i=0; i<matrix.length; i++) {
-    let maxInnerArr = maxOfArray(matrix[i]);
-    if (maxInnterArr > maxMatrix) {
-      maxMatrix = maxInnerArr;
-    };
+    let maxInnerArr = Math.max(...matrix[i]);
+    maxOfEachArr.push(maxInnerArr);
   };
+  let maxMatrix = Math.max(...maxOfEachArr);
+  return maxMatrix;
 };
